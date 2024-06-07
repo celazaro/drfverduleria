@@ -23,7 +23,7 @@ class Productos(models.Model):
     )
     
     nombre = models.CharField(max_length=255, verbose_name='Nombre')
-    imagen = models.ImageField(upload_to='productos', default='imagen_default.png', verbose_name='Imagen')
+    imagen = models.URLField(max_length=600, verbose_name='Imagen')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='get_products', verbose_name='Categoría')
     descripcion = models.TextField(verbose_name='Descripción')
     precio = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Precio')
